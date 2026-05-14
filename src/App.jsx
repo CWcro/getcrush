@@ -987,7 +987,8 @@ Einfach / tippen um die Befehle zu sehen. Viel Vergnügen! 🎩`;
             {loading ? "Speichern..." : "Profil speichern & loslegen →"}
           </button>
           <div style={{display:"flex",gap:"16px",justifyContent:"center",marginTop:"16px"}}>
-            <a href="https://getcrush.de" target="_blank" rel="noopener noreferrer" style={{color:"#5a4a3a",fontSize:"0.75rem",textDecoration:"underline"}}>Impressum & Datenschutz</a>
+            <button onClick={() => { if(window.Capacitor) { window.open("https://getcrush.de/#impressum","_system"); } else { setLegalPage("impressum"); } }} style={{background:"none",border:"none",color:"#5a4a3a",fontSize:"0.75rem",cursor:"pointer",textDecoration:"underline",fontFamily:"var(--font-body)"}}>Impressum</button>
+            <button onClick={() => { if(window.Capacitor) { window.open("https://getcrush.de/#datenschutz","_system"); } else { setLegalPage("datenschutz"); } }} style={{background:"none",border:"none",color:"#5a4a3a",fontSize:"0.75rem",cursor:"pointer",textDecoration:"underline",fontFamily:"var(--font-body)"}}>Datenschutz</button>
           </div>
 
         </div>
