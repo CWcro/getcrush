@@ -1004,6 +1004,8 @@ Einfach / tippen um die Befehle zu sehen. Viel Vergnügen! 🎩`;
           <div className="live-badge"><div className="live-dot"/><span style={{ fontSize: "0.78rem" }}>{profiles.filter(p => p.online).length} online</span></div>
           {me && <span style={{ fontSize: "0.8rem", color: "var(--cream3)" }}>Hey, {me.name} 👋</span>}
           <button className="btn-nav-ghost" onClick={() => { setView("setup"); setSetupName(me?.name||""); setSetupAge(me?.age||""); setSetupCity(me?.city||""); setSetupBio(me?.bio||""); setSetupInterests(me?.interests||[]); setSetupGender(me?.gender||""); setAvatarPreview(me?.avatar_url||null); setSetupPhotos(me?.photos||[]); }}>Profil</button>
+          <button className="btn-nav-ghost" onClick={() => setLegalPage("impressum")} style={{fontSize:"0.75rem"}}>Impressum</button>
+          <button className="btn-nav-ghost" onClick={() => setLegalPage("datenschutz")} style={{fontSize:"0.75rem"}}>Datenschutz</button>
           <button className="btn-nav-ghost" onClick={handleLogout}>Logout</button>
         </div>
       </nav>
