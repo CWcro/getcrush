@@ -1558,10 +1558,10 @@ Einfach / tippen um die Befehle zu sehen. Viel Vergnügen! 🎩`;
         </div>
       )}
       {legalPage && <Legal page={legalPage} onClose={() => setLegalPage(null)} />}
-      <div style={{position:"fixed",bottom:showCookieBanner?"80px":"8px",left:"50%",transform:"translateX(-50%)",zIndex:9998,display:"flex",gap:"16px"}}>
+      {!isMobile && <div style={{position:"fixed",bottom:showCookieBanner?"80px":"8px",left:"50%",transform:"translateX(-50%)",zIndex:9998,display:"flex",gap:"16px"}}>
         <button onClick={() => setLegalPage("impressum")} style={{background:"rgba(20,18,16,0.7)",backdropFilter:"blur(8px)",border:"1px solid rgba(242,232,217,0.1)",color:"#8a7868",fontSize:"0.72rem",cursor:"pointer",borderRadius:"6px",padding:"4px 10px",fontFamily:"var(--font-body)"}}>Impressum</button>
         <button onClick={() => setLegalPage("datenschutz")} style={{background:"rgba(20,18,16,0.7)",backdropFilter:"blur(8px)",border:"1px solid rgba(242,232,217,0.1)",color:"#8a7868",fontSize:"0.72rem",cursor:"pointer",borderRadius:"6px",padding:"4px 10px",fontFamily:"var(--font-body)"}}>Datenschutz</button>
-      </div>
+      </div>}
 
       {showCookieBanner && (
         <div style={{position:"fixed",bottom:0,left:0,right:0,zIndex:99999,background:"rgba(20,18,16,0.97)",backdropFilter:"blur(12px)",borderTop:"1px solid rgba(242,232,217,0.12)",padding:"16px 24px",display:"flex",alignItems:"center",gap:"16px",flexWrap:"wrap",justifyContent:"space-between"}}>
