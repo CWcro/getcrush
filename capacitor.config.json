@@ -1,0 +1,20 @@
+{
+  "appId": "de.getcrush.app",
+  "appName": "GetCrush",
+  "webDir": "dist",
+  "server": {
+    "androidScheme": "https"
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 2000,
+      "backgroundColor": "#0f0d0b",
+      "androidSplashResourceName": "splash",
+      "showSpinner": false
+    },
+    "StatusBar": {
+      "style": "dark",
+      "backgroundColor": "#0f0d0b"
+    }
+  }
+}

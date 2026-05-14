@@ -1,0 +1,7 @@
+﻿node_modules/
+android/
+ios/
+dist/
+supabase.exe
+supabase.tar.gz
+*.tar.gz
