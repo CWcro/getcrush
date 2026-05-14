@@ -1548,5 +1548,6 @@ Einfach / tippen um die Befehle zu sehen. Viel Vergnügen! 🎩`;
       )}
     </div>
     {legalPage && <Legal page={legalPage} onClose={() => setLegalPage(null)} />}
+    </>
   );
 }
