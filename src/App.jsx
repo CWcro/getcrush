@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { supabase } from "./supabase.js";
+import Legal from "./Legal.jsx";
 
 // Push Notifications (only in Capacitor/native app)
 const sendPush = async (to_user_id, type, from_name, message = "") => {
@@ -175,6 +176,7 @@ export default function App() {
   const [roomMsgText, setRoomMsgText] = useState("");
   const [alfredTyping, setAlfredTyping] = useState(false);
   const [mobileShowChat, setMobileShowChat] = useState(false);
+  const [legalPage, setLegalPage] = useState(null);
   // Debug activeRoom changes
   useEffect(() => { console.log("activeRoom changed:", activeRoom?.name || "null"); }, [activeRoom]);
   const [userPopup, setUserPopup] = useState(null); // profile to show
@@ -1545,5 +1547,6 @@ Einfach / tippen um die Befehle zu sehen. Viel Vergnügen! 🎩`;
         </div>
       )}
     </div>
+    {legalPage && <Legal page={legalPage} onClose={() => setLegalPage(null)} />}
   );
 }
