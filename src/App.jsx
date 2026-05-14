@@ -989,7 +989,15 @@ Einfach / tippen um die Befehle zu sehen. Viel Vergnügen! 🎩`;
             <a href="https://getcrush.de" target="_blank" rel="noopener noreferrer" style={{color:"#5a4a3a",fontSize:"0.75rem",textDecoration:"underline"}}>Impressum & Datenschutz</a>
           </div>
           <div style={{textAlign:"center",marginTop:"24px"}}>
-            <button onClick={handleDeleteAccount} style={{background:"none",border:"1px solid rgba(191,64,64,0.3)",color:"#f08080",fontSize:"0.78rem",padding:"8px 20px",borderRadius:"8px",cursor:"pointer",fontFamily:"var(--font-body)"}}>🗑 Konto löschen</button>
+            {!confirmDelete ? (
+              <button onClick={handleDeleteAccount} style={{background:"none",border:"1px solid rgba(191,64,64,0.3)",color:"#f08080",fontSize:"0.78rem",padding:"8px 20px",borderRadius:"8px",cursor:"pointer",fontFamily:"var(--font-body)"}}>🗑 Konto löschen</button>
+            ) : (
+              <div style={{display:"flex",gap:"8px",justifyContent:"center",flexWrap:"wrap"}}>
+                <p style={{color:"#f08080",fontSize:"0.78rem",width:"100%",textAlign:"center",margin:"0 0 8px"}}>Wirklich löschen?</p>
+                <button onClick={handleDeleteAccount} style={{background:"rgba(191,64,64,0.2)",border:"1px solid rgba(191,64,64,0.4)",color:"#f08080",fontSize:"0.78rem",padding:"8px 16px",borderRadius:"8px",cursor:"pointer",fontFamily:"var(--font-body)"}}>✓ Ja, löschen</button>
+                <button onClick={() => setConfirmDelete(false)} style={{background:"rgba(242,232,217,0.08)",border:"1px solid rgba(242,232,217,0.12)",color:"#c4b09a",fontSize:"0.78rem",padding:"8px 16px",borderRadius:"8px",cursor:"pointer",fontFamily:"var(--font-body)"}}>✗ Abbrechen</button>
+              </div>
+            )}
           </div>
         </div>
       </div>
