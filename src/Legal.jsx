@@ -16,10 +16,10 @@ export default function Legal({ page, onClose }) {
         {page === "impressum" && <>
           <h1 style={{ color: "#f2e8d9", fontSize: "2rem", marginBottom: "32px" }}>Impressum</h1>
           <h2 style={{ color: "#bf5c40", fontSize: "1.1rem" }}>Angaben gemäß § 5 TMG</h2>
-          <p>Luis Binkowski<br />Remer Quantum Corp<br />Potsdam, Deutschland</p>
+          <p>Luis<br />Remer Quantum Corp<br />Teltow, Deutschland</p>
           <p>E-Mail: <a href="mailto:luisbinx34@gmail.com" style={{ color: "#bf5c40" }}>luisbinx34@gmail.com</a></p>
           <h2 style={{ color: "#bf5c40", fontSize: "1.1rem", marginTop: "24px" }}>Verantwortlich für den Inhalt</h2>
-          <p>Luis Binkowski</p>
+          <p>Luis</p>
           <h2 style={{ color: "#bf5c40", fontSize: "1.1rem", marginTop: "24px" }}>Haftungsausschluss</h2>
           <p>Die Inhalte dieser Website wurden mit größtmöglicher Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir keine Gewähr übernehmen.</p>
           <h2 style={{ color: "#bf5c40", fontSize: "1.1rem", marginTop: "24px" }}>Streitschlichtung</h2>
@@ -30,7 +30,7 @@ export default function Legal({ page, onClose }) {
           <h1 style={{ color: "#f2e8d9", fontSize: "2rem", marginBottom: "32px" }}>Datenschutzerklärung</h1>
           
           <h2 style={{ color: "#bf5c40", fontSize: "1.1rem" }}>1. Verantwortlicher</h2>
-          <p>Luis Binkowski, Remer Quantum Corp, Potsdam, Deutschland<br />
+          <p>Luis, Remer Quantum Corp, Potsdam, Deutschland<br />
           E-Mail: luisbinx34@gmail.com</p>
 
           <h2 style={{ color: "#bf5c40", fontSize: "1.1rem", marginTop: "24px" }}>2. Erhobene Daten</h2>
