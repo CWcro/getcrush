@@ -177,6 +177,7 @@ export default function App() {
   const [alfredTyping, setAlfredTyping] = useState(false);
   const [mobileShowChat, setMobileShowChat] = useState(false);
   const [legalPage, setLegalPage] = useState(null);
+  const [showCookieBanner, setShowCookieBanner] = useState(() => !localStorage.getItem("gc_cookies_accepted"));
   // Debug activeRoom changes
   useEffect(() => { console.log("activeRoom changed:", activeRoom?.name || "null"); }, [activeRoom]);
   const [userPopup, setUserPopup] = useState(null); // profile to show
@@ -1549,6 +1550,18 @@ Einfach / tippen um die Befehle zu sehen. Viel Vergnügen! 🎩`;
         </div>
       )}
       {legalPage && <Legal page={legalPage} onClose={() => setLegalPage(null)} />}
+      {showCookieBanner && (
+        <div style={{position:"fixed",bottom:0,left:0,right:0,zIndex:99999,background:"rgba(20,18,16,0.97)",backdropFilter:"blur(12px)",borderTop:"1px solid rgba(242,232,217,0.12)",padding:"16px 24px",display:"flex",alignItems:"center",gap:"16px",flexWrap:"wrap",justifyContent:"space-between"}}>
+          <p style={{color:"#c4b09a",fontSize:"0.82rem",margin:0,flex:1,minWidth:"200px"}}>
+            🍪 Wir verwenden nur technisch notwendige Cookies. Keine Tracking- oder Werbe-Cookies. {" "}
+            <span onClick={() => setLegalPage("datenschutz")} style={{color:"#bf5c40",cursor:"pointer",textDecoration:"underline"}}>Datenschutz</span>
+          </p>
+          <div style={{display:"flex",gap:"8px"}}>
+            <button onClick={() => { localStorage.setItem("gc_cookies_accepted","1"); setShowCookieBanner(false); }} style={{padding:"8px 20px",borderRadius:"8px",background:"#bf5c40",border:"none",color:"#fff",cursor:"pointer",fontFamily:"var(--font-body)",fontSize:"0.82rem",fontWeight:"600"}}>Akzeptieren</button>
+            <button onClick={() => { localStorage.setItem("gc_cookies_accepted","1"); setShowCookieBanner(false); }} style={{padding:"8px 20px",borderRadius:"8px",background:"rgba(242,232,217,0.08)",border:"1px solid rgba(242,232,217,0.15)",color:"#c4b09a",cursor:"pointer",fontFamily:"var(--font-body)",fontSize:"0.82rem"}}>Nur notwendige</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
