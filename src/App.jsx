@@ -1008,8 +1008,6 @@ Einfach / tippen um die Befehle zu sehen. Viel Vergnügen! 🎩`;
           <div className="live-badge"><div className="live-dot"/><span style={{ fontSize: "0.78rem" }}>{profiles.filter(p => p.online).length} online</span></div>
           {me && <span style={{ fontSize: "0.8rem", color: "var(--cream3)" }}>Hey, {me.name} 👋</span>}
           <button className="btn-nav-ghost" onClick={() => { setView("setup"); setSetupName(me?.name||""); setSetupAge(me?.age||""); setSetupCity(me?.city||""); setSetupBio(me?.bio||""); setSetupInterests(me?.interests||[]); setSetupGender(me?.gender||""); setAvatarPreview(me?.avatar_url||null); setSetupPhotos(me?.photos||[]); }}>Profil</button>
-          <button className="btn-nav-ghost" onClick={() => setLegalPage("impressum")} style={{fontSize:"0.75rem"}}>Impressum</button>
-          <button className="btn-nav-ghost" onClick={() => setLegalPage("datenschutz")} style={{fontSize:"0.75rem"}}>Datenschutz</button>
           <button className="btn-nav-ghost" onClick={handleLogout}>Logout</button>
         </div>
       </nav>
@@ -1553,6 +1551,14 @@ Einfach / tippen um die Befehle zu sehen. Viel Vergnügen! 🎩`;
         </div>
       )}
       {legalPage && <Legal page={legalPage} onClose={() => setLegalPage(null)} />}
+      <div style={{position:"fixed",bottom:showCookieBanner?"80px":"8px",left:"50%",transform:"translateX(-50%)",zIndex:9998,display:"flex",gap:"16px"}}>
+        <button onClick={() => setLegalPage("impressum")} style={{background:"rgba(20,18,16,0.7)",backdropFilter:"blur(8px)",border:"1px solid rgba(242,232,217,0.1)",color:"#8a7868",fontSize:"0.72rem",cursor:"pointer",borderRadius:"6px",padding:"4px 10px",fontFamily:"var(--font-body)"}}>Impressum</button>
+        <button onClick={() => setLegalPage("datenschutz")} style={{background:"rgba(20,18,16,0.7)",backdropFilter:"blur(8px)",border:"1px solid rgba(242,232,217,0.1)",color:"#8a7868",fontSize:"0.72rem",cursor:"pointer",borderRadius:"6px",padding:"4px 10px",fontFamily:"var(--font-body)"}}>Datenschutz</button>
+      </div>
+      <div style={{position:"fixed",bottom: showCookieBanner ? "80px" : "8px",right:"12px",zIndex:9998,display:"flex",gap:"8px"}}>
+        <button onClick={() => setLegalPage("impressum")} style={{background:"rgba(20,18,16,0.8)",border:"1px solid rgba(242,232,217,0.1)",color:"#8a7868",fontSize:"0.7rem",padding:"4px 10px",borderRadius:"6px",cursor:"pointer",fontFamily:"var(--font-body)"}}>Impressum</button>
+        <button onClick={() => setLegalPage("datenschutz")} style={{background:"rgba(20,18,16,0.8)",border:"1px solid rgba(242,232,217,0.1)",color:"#8a7868",fontSize:"0.7rem",padding:"4px 10px",borderRadius:"6px",cursor:"pointer",fontFamily:"var(--font-body)"}}>Datenschutz</button>
+      </div>
       {showCookieBanner && (
         <div style={{position:"fixed",bottom:0,left:0,right:0,zIndex:99999,background:"rgba(20,18,16,0.97)",backdropFilter:"blur(12px)",borderTop:"1px solid rgba(242,232,217,0.12)",padding:"16px 24px",display:"flex",alignItems:"center",gap:"16px",flexWrap:"wrap",justifyContent:"space-between"}}>
           <p style={{color:"#c4b09a",fontSize:"0.82rem",margin:0,flex:1,minWidth:"200px"}}>
