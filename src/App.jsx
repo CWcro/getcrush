@@ -1546,8 +1546,7 @@ Einfach / tippen um die Befehle zu sehen. Viel Vergnügen! 🎩`;
           <button className="toast-x" onClick={e => { e.stopPropagation(); setMatchToast(null); }}>✕</button>
         </div>
       )}
+      {legalPage && <Legal page={legalPage} onClose={() => setLegalPage(null)} />}
     </div>
-    {legalPage && <Legal page={legalPage} onClose={() => setLegalPage(null)} />}
-    </>
   );
 }
