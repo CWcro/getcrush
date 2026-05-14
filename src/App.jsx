@@ -983,12 +983,13 @@ Einfach / tippen um die Befehle zu sehen. Viel Vergnügen! 🎩`;
               ))}
             </div>
           </div>
-          <button className="auth-btn" onClick={handleSetupSave} disabled={loading}>
+          <button className="auth-btn" onClick={handleSetupSave} disabled={loading} style={{marginBottom:"24px"}}>
             {loading ? "Speichern..." : "Profil speichern & loslegen →"}
           </button>
-          <div style={{display:"flex",gap:"16px",justifyContent:"center",marginTop:"16px"}}>
-            <button onClick={() => { if(window.Capacitor) { window.open("https://getcrush.de/#impressum","_system"); } else { setLegalPage("impressum"); } }} style={{background:"none",border:"none",color:"#5a4a3a",fontSize:"0.75rem",cursor:"pointer",textDecoration:"underline",fontFamily:"var(--font-body)"}}>Impressum</button>
-            <button onClick={() => { if(window.Capacitor) { window.open("https://getcrush.de/#datenschutz","_system"); } else { setLegalPage("datenschutz"); } }} style={{background:"none",border:"none",color:"#5a4a3a",fontSize:"0.75rem",cursor:"pointer",textDecoration:"underline",fontFamily:"var(--font-body)"}}>Datenschutz</button>
+          <hr style={{border:"none",borderTop:"1px solid rgba(242,232,217,0.08)",margin:"0 0 16px"}}/>
+          <div style={{display:"flex",gap:"16px",justifyContent:"center"}}>
+            <button onClick={(e) => { e.preventDefault(); e.stopPropagation(); if(window.Capacitor) { window.open("https://getcrush.de","_system"); } else { setLegalPage("impressum"); } }} style={{background:"none",border:"none",color:"#5a4a3a",fontSize:"0.72rem",cursor:"pointer",textDecoration:"underline",fontFamily:"var(--font-body)"}}>Impressum</button>
+            <button onClick={(e) => { e.preventDefault(); e.stopPropagation(); if(window.Capacitor) { window.open("https://getcrush.de","_system"); } else { setLegalPage("datenschutz"); } }} style={{background:"none",border:"none",color:"#5a4a3a",fontSize:"0.72rem",cursor:"pointer",textDecoration:"underline",fontFamily:"var(--font-body)"}}>Datenschutz</button>
           </div>
 
         </div>
