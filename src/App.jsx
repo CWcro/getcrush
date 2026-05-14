@@ -871,7 +871,7 @@ Einfach / tippen um die Befehle zu sehen. Viel Vergnügen! 🎩`;
       <footer className="footer">
         <div className="footer-logo">Get<span>Crush</span></div>
         <div className="footer-note">© 2026 GetCrush — getcrush.de</div>
-        <div className="footer-links"><span className="f-link">Datenschutz</span><span className="f-link">Impressum</span></div>
+        <div className="footer-links"><span className="f-link" style={{cursor:"pointer"}} onClick={() => setLegalPage("datenschutz")}>Datenschutz</span><span className="f-link" style={{cursor:"pointer"}} onClick={() => setLegalPage("impressum")}>Impressum</span></div>
       </footer>
     </div>
   );
