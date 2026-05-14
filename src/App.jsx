@@ -789,6 +789,8 @@ Einfach / tippen um die Befehle zu sehen. Viel Vergnügen! 🎩`;
 
   const handleSetupSave = async () => {
     if (!setupName || !setupAge || !setupCity) { setError("Name, Alter und Stadt sind Pflicht."); return; }
+    if (parseInt(setupAge) < 18) { setError("Du musst mindestens 18 Jahre alt sein um GetCrush zu nutzen."); return; }
+    if (parseInt(setupAge) > 99) { setError("Bitte gib ein gültiges Alter ein."); return; }
     setLoading(true); setError("");
     // Use first photo as avatar_url, all photos in photos array
     const avatarUrl = setupPhotos[0] || me?.avatar_url || null;
@@ -953,6 +955,7 @@ Einfach / tippen um die Befehle zu sehen. Viel Vergnügen! 🎩`;
             <div className="auth-field">
               <label className="auth-label">Alter *</label>
               <input className="auth-input" type="number" placeholder="25" min="18" max="99" value={setupAge} onChange={e => setSetupAge(e.target.value)}/>
+              {setupAge && parseInt(setupAge) < 18 && <p style={{color:"#f08080",fontSize:"0.78rem",margin:"4px 0 0"}}>⚠️ Du musst mindestens 18 Jahre alt sein.</p>}
             </div>
           </div>
           <div className="auth-field">
