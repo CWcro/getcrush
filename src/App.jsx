@@ -177,6 +177,7 @@ export default function App() {
   const [alfredTyping, setAlfredTyping] = useState(false);
   const [mobileShowChat, setMobileShowChat] = useState(false);
   const [legalPage, setLegalPage] = useState(null);
+  const [confirmDelete, setConfirmDelete] = useState(false);
   const [showCookieBanner, setShowCookieBanner] = useState(() => !localStorage.getItem("gc_cookies_accepted"));
   // Debug activeRoom changes
   useEffect(() => { console.log("activeRoom changed:", activeRoom?.name || "null"); }, [activeRoom]);
@@ -925,7 +926,7 @@ Einfach / tippen um die Befehle zu sehen. Viel Vergnügen! 🎩`;
   );
 
   if (view === "setup") return (
-    <div>
+    <div style={{background:"#0a0806",minHeight:"100vh",color:"#f2e8d9"}}>
       <div className="bg-orbs"><div className="orb orb-1"/><div className="orb orb-2"/><div className="orb orb-3"/></div>
       <nav className="nav">
         <div className="logo">Get<span>Crush</span></div>
@@ -988,17 +989,7 @@ Einfach / tippen um die Befehle zu sehen. Viel Vergnügen! 🎩`;
           <div style={{display:"flex",gap:"16px",justifyContent:"center",marginTop:"16px"}}>
             <a href="https://getcrush.de" target="_blank" rel="noopener noreferrer" style={{color:"#5a4a3a",fontSize:"0.75rem",textDecoration:"underline"}}>Impressum & Datenschutz</a>
           </div>
-          <div style={{textAlign:"center",marginTop:"24px"}}>
-            {!confirmDelete ? (
-              <button onClick={handleDeleteAccount} style={{background:"none",border:"1px solid rgba(191,64,64,0.3)",color:"#f08080",fontSize:"0.78rem",padding:"8px 20px",borderRadius:"8px",cursor:"pointer",fontFamily:"var(--font-body)"}}>🗑 Konto löschen</button>
-            ) : (
-              <div style={{display:"flex",gap:"8px",justifyContent:"center",flexWrap:"wrap"}}>
-                <p style={{color:"#f08080",fontSize:"0.78rem",width:"100%",textAlign:"center",margin:"0 0 8px"}}>Wirklich löschen?</p>
-                <button onClick={handleDeleteAccount} style={{background:"rgba(191,64,64,0.2)",border:"1px solid rgba(191,64,64,0.4)",color:"#f08080",fontSize:"0.78rem",padding:"8px 16px",borderRadius:"8px",cursor:"pointer",fontFamily:"var(--font-body)"}}>✓ Ja, löschen</button>
-                <button onClick={() => setConfirmDelete(false)} style={{background:"rgba(242,232,217,0.08)",border:"1px solid rgba(242,232,217,0.12)",color:"#c4b09a",fontSize:"0.78rem",padding:"8px 16px",borderRadius:"8px",cursor:"pointer",fontFamily:"var(--font-body)"}}>✗ Abbrechen</button>
-              </div>
-            )}
-          </div>
+
         </div>
       </div>
     </div>
