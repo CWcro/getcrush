@@ -128,7 +128,8 @@ export default function App() {
   const isCapacitor = window.Capacitor !== undefined || window.location.protocol === "capacitor:";
   const isMobile = /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
   const forceWeb = new URLSearchParams(window.location.search).get("web") === "1";
-  if (isMobile && !forceWeb && !isCapacitor) return <MobileLanding />;
+  const hasOAuthToken = window.location.hash.includes("access_token") || window.location.hash.includes("refresh_token");
+  if (isMobile && !forceWeb && !isCapacitor && !hasOAuthToken) return <MobileLanding />;
 
   const [session, setSession] = useState(null);
   const [view, setView] = useState("landing");
