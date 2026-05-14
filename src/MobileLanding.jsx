@@ -105,13 +105,13 @@ export default function MobileLanding() {
           </svg>
           <div>
             <div style={{ fontSize: "0.65rem", color: "#666", lineHeight: 1 }}>Laden im</div>
-            <div style={{ fontSize: "1rem", fontWeight: "700", color: "#000", lineHeight: 1.3 }}>App Store</div>
+            <div style={{ fontSize: "1rem", fontWeight: "700", color: "#000", lineHeight: 1.3 }}>Web-Version</div>
           </div>
           <div style={{ marginLeft: "auto", fontSize: "0.7rem", background: "#f0f0f0", borderRadius: "50px", padding: "3px 10px", color: "#666" }}>Bald</div>
         </a>
 
         {/* Google Play Button */}
-        <a href="https://play.google.com" target="_blank" rel="noreferrer"
+        <a href="https://play.google.com/apps/testing/de.getcrush.app" target="_blank" rel="noreferrer"
           style={{ display: "flex", alignItems: "center", gap: "14px", width: "100%", padding: "16px 24px", borderRadius: "16px", background: "#1a1a2e", border: "1px solid rgba(242,232,217,0.1)", cursor: "pointer", marginBottom: "20px", textDecoration: "none", boxShadow: "0 8px 24px rgba(0,0,0,0.4)", transition: "transform 0.2s" }}
           onTouchStart={e => e.currentTarget.style.transform = "scale(0.98)"}
           onTouchEnd={e => e.currentTarget.style.transform = "scale(1)"}>
