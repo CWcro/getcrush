@@ -925,8 +925,6 @@ Einfach / tippen um die Befehle zu sehen. Viel Vergnügen! 🎩`;
   );
 
   if (view === "setup") return (
-    <>
-    {legalPage && <Legal page={legalPage} onClose={() => setLegalPage(null)} />}
     <div>
       <div className="bg-orbs"><div className="orb orb-1"/><div className="orb orb-2"/><div className="orb orb-3"/></div>
       <nav className="nav">
@@ -988,8 +986,7 @@ Einfach / tippen um die Befehle zu sehen. Viel Vergnügen! 🎩`;
             {loading ? "Speichern..." : "Profil speichern & loslegen →"}
           </button>
           <div style={{display:"flex",gap:"16px",justifyContent:"center",marginTop:"16px"}}>
-            <button onClick={() => setLegalPage("impressum")} style={{background:"none",border:"none",color:"#5a4a3a",fontSize:"0.75rem",cursor:"pointer",textDecoration:"underline"}}>Impressum</button>
-            <button onClick={() => setLegalPage("datenschutz")} style={{background:"none",border:"none",color:"#5a4a3a",fontSize:"0.75rem",cursor:"pointer",textDecoration:"underline"}}>Datenschutz</button>
+            <a href="https://getcrush.de" target="_blank" rel="noopener noreferrer" style={{color:"#5a4a3a",fontSize:"0.75rem",textDecoration:"underline"}}>Impressum & Datenschutz</a>
           </div>
           <div style={{textAlign:"center",marginTop:"24px"}}>
             <button onClick={handleDeleteAccount} style={{background:"none",border:"1px solid rgba(191,64,64,0.3)",color:"#f08080",fontSize:"0.78rem",padding:"8px 20px",borderRadius:"8px",cursor:"pointer",fontFamily:"var(--font-body)"}}>🗑 Konto löschen</button>
@@ -997,7 +994,6 @@ Einfach / tippen um die Befehle zu sehen. Viel Vergnügen! 🎩`;
         </div>
       </div>
     </div>
-    </>
   );
 
   // ── MAIN APP ──
