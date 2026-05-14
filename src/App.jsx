@@ -985,6 +985,10 @@ Einfach / tippen um die Befehle zu sehen. Viel Vergnügen! 🎩`;
           <button className="auth-btn" onClick={handleSetupSave} disabled={loading}>
             {loading ? "Speichern..." : "Profil speichern & loslegen →"}
           </button>
+          <div style={{display:"flex",gap:"16px",justifyContent:"center",marginTop:"16px"}}>
+            <button onClick={() => setLegalPage("impressum")} style={{background:"none",border:"none",color:"#5a4a3a",fontSize:"0.75rem",cursor:"pointer",textDecoration:"underline"}}>Impressum</button>
+            <button onClick={() => setLegalPage("datenschutz")} style={{background:"none",border:"none",color:"#5a4a3a",fontSize:"0.75rem",cursor:"pointer",textDecoration:"underline"}}>Datenschutz</button>
+          </div>
         </div>
       </div>
     </div>
