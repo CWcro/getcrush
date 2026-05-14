@@ -841,6 +841,7 @@ Einfach / tippen um die Befehle zu sehen. Viel Vergnügen! 🎩`;
   // ══════════════════════════════════════
 
   if (view === "landing") return (
+    <>
     <div>
       <div className="bg-orbs"><div className="orb orb-1"/><div className="orb orb-2"/><div className="orb orb-3"/></div>
       <nav className="nav">
@@ -878,6 +879,8 @@ Einfach / tippen um die Befehle zu sehen. Viel Vergnügen! 🎩`;
         <div className="footer-links"><span className="f-link" style={{cursor:"pointer"}} onClick={() => setLegalPage("datenschutz")}>Datenschutz</span><span className="f-link" style={{cursor:"pointer"}} onClick={() => setLegalPage("impressum")}>Impressum</span></div>
       </footer>
     </div>
+    {legalPage && <Legal page={legalPage} onClose={() => setLegalPage(null)} />}
+    </>
   );
 
   if (view === "auth") return (
