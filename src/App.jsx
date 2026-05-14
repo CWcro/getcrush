@@ -925,6 +925,8 @@ Einfach / tippen um die Befehle zu sehen. Viel Vergnügen! 🎩`;
   );
 
   if (view === "setup") return (
+    <>
+    {legalPage && <Legal page={legalPage} onClose={() => setLegalPage(null)} />}
     <div>
       <div className="bg-orbs"><div className="orb orb-1"/><div className="orb orb-2"/><div className="orb orb-3"/></div>
       <nav className="nav">
@@ -995,6 +997,7 @@ Einfach / tippen um die Befehle zu sehen. Viel Vergnügen! 🎩`;
         </div>
       </div>
     </div>
+    </>
   );
 
   // ── MAIN APP ──
