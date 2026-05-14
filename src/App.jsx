@@ -989,6 +989,9 @@ Einfach / tippen um die Befehle zu sehen. Viel Vergnügen! 🎩`;
             <button onClick={() => setLegalPage("impressum")} style={{background:"none",border:"none",color:"#5a4a3a",fontSize:"0.75rem",cursor:"pointer",textDecoration:"underline"}}>Impressum</button>
             <button onClick={() => setLegalPage("datenschutz")} style={{background:"none",border:"none",color:"#5a4a3a",fontSize:"0.75rem",cursor:"pointer",textDecoration:"underline"}}>Datenschutz</button>
           </div>
+          <div style={{textAlign:"center",marginTop:"24px"}}>
+            <button onClick={handleDeleteAccount} style={{background:"none",border:"1px solid rgba(191,64,64,0.3)",color:"#f08080",fontSize:"0.78rem",padding:"8px 20px",borderRadius:"8px",cursor:"pointer",fontFamily:"var(--font-body)"}}>🗑 Konto löschen</button>
+          </div>
         </div>
       </div>
     </div>
