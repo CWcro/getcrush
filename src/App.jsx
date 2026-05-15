@@ -561,6 +561,22 @@ Einfach / tippen um die Befehle zu sehen. Viel Vergnügen! 🎩`;
     setTab("matches");
   };
 
+  const reportUser = async (profile) => {
+    if (!profile) return;
+    await supabase.from("reports").insert({ from_user: session.user.id, to_user: profile.id, reason: "user_report" });
+    setUserPopup(null);
+    alert(`${profile.name} wurde gemeldet. Wir prüfen das Konto. Danke für deine Mithilfe! 🛡️`);
+  };
+
+  const blockUser = async (profile) => {
+    if (!profile) return;
+    await supabase.from("likes").delete().or(`and(from_user.eq.${session.user.id},to_user.eq.${profile.id}),and(from_user.eq.${profile.id},to_user.eq.${session.user.id})`);
+    await supabase.from("messages").delete().or(`and(from_user.eq.${session.user.id},to_user.eq.${profile.id}),and(from_user.eq.${profile.id},to_user.eq.${session.user.id})`);
+    setMatches(prev => prev.filter(m => m.id !== profile.id));
+    setUserPopup(null);
+    alert(`${profile.name} wurde blockiert.`);
+  };
+
   const deleteRoom = async (room) => {
     if (!window.confirm(`Raum "${room.name}" wirklich löschen?`)) return;
     const { error } = await supabase.from("rooms").delete().eq("id", room.id);
@@ -792,6 +808,11 @@ Einfach / tippen um die Befehle zu sehen. Viel Vergnügen! 🎩`;
   const handleSetupSave = async () => {
     if (!setupName || !setupAge || !setupCity) { setError("Name, Alter und Stadt sind Pflicht."); return; }
     if (parseInt(setupAge) < 18) { setError("Du musst mindestens 18 Jahre alt sein um GetCrush zu nutzen."); return; }
+    // Safety reminder on first setup
+    if (!me) {
+      const safetyMsg = "🛡️ Sicherheitstipps:\n\n• Triff dich das erste Mal immer an öffentlichen Orten\n• Teile keine persönlichen Daten (Adresse, Arbeit)\n• Vertraue deinem Bauchgefühl\n• Bei Gefahr: sofort 110 anrufen\n\nGetCrush wünscht dir sichere und schöne Begegnungen! 💚";
+      setTimeout(() => alert(safetyMsg), 1000);
+    }
     if (parseInt(setupAge) > 99) { setError("Bitte gib ein gültiges Alter ein."); return; }
     setLoading(true); setError("");
     // Use first photo as avatar_url, all photos in photos array
@@ -1538,6 +1559,10 @@ Einfach / tippen um die Befehle zu sehen. Viel Vergnügen! 🎩`;
                       💘 Crush schicken
                     </button>
                 }
+              </div>
+              <div style={{display:"flex",gap:"8px",marginTop:"8px"}}>
+                <button onClick={() => blockUser(userPopup)} style={{flex:1,padding:"8px",borderRadius:"10px",background:"rgba(242,232,217,0.05)",border:"1px solid rgba(242,232,217,0.1)",color:"#8a7868",fontFamily:"system-ui",fontSize:"0.75rem",cursor:"pointer"}}>🚫 Blockieren</button>
+                <button onClick={() => reportUser(userPopup)} style={{flex:1,padding:"8px",borderRadius:"10px",background:"rgba(191,64,64,0.1)",border:"1px solid rgba(191,64,64,0.2)",color:"#f08080",fontFamily:"system-ui",fontSize:"0.75rem",cursor:"pointer"}}>⚠️ Melden</button>
               </div>
             </div>
           </div>
