@@ -26,6 +26,44 @@ export default function Legal({ page, onClose }) {
           <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a href="https://ec.europa.eu/consumers/odr" style={{ color: "#bf5c40" }} target="_blank">https://ec.europa.eu/consumers/odr</a></p>
         </>}
 
+        {page === "agb" && <>
+          <h1 style={{ color: "#f2e8d9", fontSize: "2rem", marginBottom: "32px" }}>Nutzungsbedingungen (AGB)</h1>
+          
+          <h2 style={{ color: "#bf5c40", fontSize: "1.1rem" }}>1. Geltungsbereich</h2>
+          <p>Diese Nutzungsbedingungen gelten für die Nutzung der App GetCrush (getcrush.de), betrieben von Luis, Remer Quantum Corp, Teltow.</p>
+
+          <h2 style={{ color: "#bf5c40", fontSize: "1.1rem", marginTop: "24px" }}>2. Mindestalter</h2>
+          <p>GetCrush ist ausschließlich für Personen ab 18 Jahren. Die Nutzung durch Minderjährige ist strengstens untersagt.</p>
+
+          <h2 style={{ color: "#bf5c40", fontSize: "1.1rem", marginTop: "24px" }}>3. Verbotene Inhalte</h2>
+          <p>Folgendes ist auf GetCrush ausdrücklich verboten:</p>
+          <ul style={{paddingLeft:"20px", lineHeight:"2"}}>
+            <li>Belästigung, Bedrohung oder Stalking anderer Nutzer</li>
+            <li>Versenden von obszönen oder expliziten Inhalten ohne Zustimmung</li>
+            <li>Fake-Profile oder falsche Identitäten</li>
+            <li>Werbung oder kommerzielle Angebote</li>
+            <li>Rassistische, diskriminierende oder hasserfüllte Inhalte</li>
+            <li>Aufforderung zu illegalen Handlungen</li>
+          </ul>
+
+          <h2 style={{ color: "#bf5c40", fontSize: "1.1rem", marginTop: "24px" }}>4. Sicherheit</h2>
+          <p>Triff dich mit Unbekannten immer an öffentlichen Orten. GetCrush übernimmt keine Haftung für Treffen die außerhalb der App stattfinden. Bei Gefahr: sofort 110 anrufen.</p>
+
+          <h2 style={{ color: "#bf5c40", fontSize: "1.1rem", marginTop: "24px" }}>5. Meldepflicht</h2>
+          <p>Nutzer sind verpflichtet, verdächtige oder gefährliche Inhalte und Profile zu melden. Gemeldete Profile werden von uns geprüft und bei Verstößen gesperrt.</p>
+
+          <h2 style={{ color: "#bf5c40", fontSize: "1.1rem", marginTop: "24px" }}>6. Sperrung</h2>
+          <p>Wir behalten uns das Recht vor, Nutzer bei Verstößen gegen diese AGB ohne Vorwarnung zu sperren.</p>
+
+          <h2 style={{ color: "#bf5c40", fontSize: "1.1rem", marginTop: "24px" }}>7. Haftung</h2>
+          <p>GetCrush haftet nicht für Schäden die durch die Nutzung der App entstehen. Die Nutzung erfolgt auf eigene Gefahr.</p>
+
+          <h2 style={{ color: "#bf5c40", fontSize: "1.1rem", marginTop: "24px" }}>8. Kontakt</h2>
+          <p>Bei Fragen: <a href="mailto:luisbinx34@gmail.com" style={{ color: "#bf5c40" }}>luisbinx34@gmail.com</a></p>
+
+          <p style={{ marginTop: "32px", fontSize: "0.8rem", color: "#8a7868" }}>Stand: Mai 2026</p>
+        </>}
+
         {page === "datenschutz" && <>
           <h1 style={{ color: "#f2e8d9", fontSize: "2rem", marginBottom: "32px" }}>Datenschutzerklärung</h1>
           
